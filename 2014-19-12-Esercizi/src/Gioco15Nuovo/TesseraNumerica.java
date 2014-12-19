@@ -13,16 +13,21 @@ public final class TesseraNumerica extends Tessera {
 		this.num=num;
 	}
 
+	/**
+	 * Ritorna 0 se this è uguale all'argomento, n>0 se this è maggiore dell'argomento, altrimenti n<0.
+	 * Nel caso l'argomento non sia una TesseraNumerica lancia una {@link IllegalArgumentException}
+	 */
 	@Override
 	public int compareTo(Tessera arg0) {
-		if (arg0 instanceof  TesseraNumerica) {
-			
-		}
+		if (arg0 instanceof  TesseraNumerica)
+			return this.num-((TesseraNumerica)arg0).num;
 		else
 			throw new IllegalArgumentException();
 	}
 
-
+	/**
+	 * Ritorna true se this è uguale all'argomento, altrimenti false.
+	 */
 	@Override
 	public boolean equals(Object other) {
 		return other instanceof TesseraNumerica && this.num==((TesseraNumerica)other).num;
@@ -31,8 +36,7 @@ public final class TesseraNumerica extends Tessera {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return null;
+		return String.valueOf(num);
 	}
 
 }
