@@ -1,6 +1,3 @@
-/**
- * 
- */
 package Gioco15Nuovo;
 
 /**
@@ -18,8 +15,11 @@ public final class TesseraNumerica extends Tessera {
 
 	@Override
 	public int compareTo(Tessera arg0) {
-		// TODO Auto-generated method stub
-		return 0;
+		if (arg0 instanceof  TesseraNumerica) {
+			
+		}
+		else
+			throw new IllegalArgumentException();
 	}
 
 
