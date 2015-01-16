@@ -19,7 +19,7 @@ public class SliderFrame extends JFrame {
 	public SliderFrame() {
 		
 		JPanel northPanel = new JPanel();
-		slid = new JSlider(0, 500);
+		slid = new JSlider(0, 200);
 		slid.addChangeListener(event -> {
 			image.setXScaleFactor((double)slid.getValue()/100);
 			image.setYScaleFactor((double)slid.getValue()/100);
