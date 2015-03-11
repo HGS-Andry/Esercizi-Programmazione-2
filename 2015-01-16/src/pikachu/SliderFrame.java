@@ -9,13 +9,19 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JSlider;
+import javax.swing.Timer;
 
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class SliderFrame extends JFrame {
+public class SliderFrame extends JFrame implements ActionListener {
 	
 	private final JSlider slid;
 	private StretchableImage image;
+	private Timer timer;
+	private double size;
+	
 	public SliderFrame() {
 		
 		JPanel northPanel = new JPanel();
@@ -25,6 +31,7 @@ public class SliderFrame extends JFrame {
 			image.setYScaleFactor((double)slid.getValue()/100);
 			pack();
 		});
+		
 		northPanel.add (slid);
 		add(northPanel, BorderLayout.NORTH);
 		
@@ -48,6 +55,24 @@ public class SliderFrame extends JFrame {
 		southPanel.add(image);
 		
 		add(southPanel, BorderLayout.SOUTH);
+		
+		size=0;
+		timer = new Timer(16, this);
+		timer.start();
+		
 		pack();
+	}
+
+	public void actionPerformed(ActionEvent e) {
+		if(size<150){
+		size++;
+		image.setXScaleFactor((double)size/100);
+		image.setYScaleFactor((double)size/100);
+		}
+		else{
+			size=0;
+		}
+			
+
 	}
 }

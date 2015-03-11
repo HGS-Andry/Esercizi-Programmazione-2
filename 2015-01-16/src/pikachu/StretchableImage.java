@@ -24,6 +24,7 @@ public class StretchableImage extends JComponent {
 
 	public void setXScaleFactor(double xScaleFactor) {
 		this.xScaleFactor = xScaleFactor;
+		
 		revalidate();
 	}
 
